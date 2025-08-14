@@ -12,10 +12,14 @@ There are over 150 contractions in braille, some of them being one-cell symbols 
 We therefore must create rules to allow the program to  translate these contractions.
 I have thought of various tools to do this and used this resource to generate ideas:
 [GeeksforGeeks] (https://www.geeksforgeeks.org/cpp/switch-vs-else/)
-1. If-statements: they were my initial thoughts, but these are not very efficient when we have more than 5 cases, which we do.
-2. Switch statements: Switch statements are a more efficient and clean way to do our translation if we have more than 5 cases.
-2. polymorphism: I believe it would be a really good idea but I am still unsure how it can be implemented in this scope.
-3. maps: I also thought of using maps because we could map strings (keys) to values (what they can be replaced with). This can be done in a separate header file for efficiency where we manually add these strings and somehow read in this map from within main.
+After our meeting on 08/14/2025, we discussed the following plan to translate our text:
+1. write a file that includes all the translation rules. This file will include all the braille fcharacter combos and, delimited by the |or ~ character, followed by their translation.
+example:
+\ | ou
+1. Load the rules file and copy all its elements into a map of "pairs". suggestion:a map of strings, but iterating over a map can be difficult.
+2. Create a translator object (using classes), The translator object will load the input file and keep track of the input file's changes
+3. Test using a test file. Note: use toupper (letter) if needed (i.e. because vS Code displays brf files as upper case)
+
 
 
 ## Step 2 (B): Translating math formulas
