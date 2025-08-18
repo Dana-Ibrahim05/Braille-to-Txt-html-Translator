@@ -1,0 +1,264 @@
+/|st
+ / | still 
+*|ch
+ * | child 
+ ,* | Child 
+ *n | children 
+ ,*n | Children 
+]|er
+,]|Er
++|ing
+,a|a
+a|a
+ ab |about
+,Ab |About 
+ abv | above 
+,abv | Above 
+
+ ac | according 
+ acr |accross 
+ af | after 
+ afn | afternoon 
+ afw | afterward 
+ ag | again  
+ ag/ | against 
+  al | also 
+ alm | almost 
+ alr | already 
+ alt | altogether 
+ although | although 
+ alw | always 
+,B|B
+b|b       
+ b | but 
+ bl | blind 
+ brl | braille 
+,c|C
+c|c
+ c | can 
+ cd | could 
+,d|D
+d|d
+ d | do 
+  dcl | declare 
+ dclg | declaring 
+ dcv | deceive 
+ dcvg | deceiving 
+,e|E
+e|e
+ e | every 
+ ei | either 
+,f|F
+f|f
+ f | from 
+ fr | friend 
+ f/ | first 
+,g|G
+g|g
+ g | go 
+ gd | good 
+ grt | grt 
+ grt/ | greatest 
+,h|H
+h|h
+ h | have 
+ hm | him 
+ hmf | himself 
+ h]f | herself 
+,i|I
+i|i
+ imm | immediate 
+,j|J
+j|j
+ j | just 
+,k|K
+ k | knowledge 
+,l|L
+l|l
+ l | like 
+ ll | little 
+ lr | letter 
+,m|M
+m|m
+ m | more 
+ m|m
+ myf | myself 
+ m/ | must 
+,n|N
+n|n
+ n | not 
+ nec | necessary 
+,o|O
+o|o
+,p|P
+p|p
+ p | people 
+ pd | paid 
+ p]cv | perceive 
+ p]h | perhaps 
+,q|Q
+q|q
+ q | quite 
+ qk | quick 
+,R|R
+r|r
+ r | rather 
+ rcv | receive 
+ rcvg | receiving 
+,s|S
+s|s
+ s | so 
+sd | said 
+ s* | such 
+,t|T
+t|t
+ t | that 
+ td | today 
+ tgr | together 
+ tm | tomorrow 
+ tn | tonight 
+,u|U
+u|u
+ u | us 
+,v|V
+v|v
+ v | very 
+,w|W
+w|w
+ w | will 
+ wd | would 
+,x|X
+x|x
+ x | it 
+ xf |itself  
+,y|Y
+y|y
+ y | you 
+ yr | your 
+ yrf | yourself 
+ yrvs | yourselves 
+,z|Z
+z|z
+ z | as 
+ &|and
+=|for
+(|of
+!|together
+!msvs|themselves
+)|with
+<|gh
+>|ar
+%|sh
+ % | shall 
+ %d | should 
+?|th
+ ? | this 
+ ?yf | thyself 
+:|wh
+$|ed
+\|ou
+ \ | out 
+ \rsvs | ourselves 
+[|ow
+1|ea
+2 |;
+ 2 | be 
+  2c | because 
+ 2f | before 
+ 2h | behind 
+ 2n | beneath
+ 2s | beside 
+ 2ss | besides 
+ 2t | between 
+ 2y | beyond 
+2|bb
+3 |:
+3|cc
+ 3cv | conceive 
+4|.
+5|en
+ 5 | enough 
+ 6 |! 
+6|ff
+7|gg
+ 7 | were 
+8|?
+9|in
+ 0 | was 
+'|'
+"d|day
+,"d|Day
+"e|every
+,"e|Every
+"f|father
+,"f|Father
+"h|here
+,"h|Here
+"k|know
+,"k|Know
+"l|lord
+,"l|Lord
+"m|mother
+,"m|Mother
+"n|name
+,"n|Name
+"o|one
+,"o|One
+"of|oneself
+,"of|Oneself
+"p|part
+,"p|Part
+"q|question
+,"q|Question
+"r|right
+,"r|Right
+"s|some
+,"s|Some
+"t|time
+,"t|Time
+"u|under
+,"u|Under
+"w|work
+"y|Young
+,"y|young
+"?|through
+,"?|Through
+"!|there
+,"!|There
+"*|character
+,"*|Character
+":|where
+,":|Where
+^u|upon
+,^u|Upon
+^!|these
+,^!|These
+"\|ought
+"?|those
+,"?|Those
+^:|whose
+,^:|Whose
+^w|word
+,^w|Word
+.d|ound
+.e|ance
+.n|sion
+.s|less
+_c|cannot
+,_c|Cannot
+_h|had
+,_h|Had
+_m|many
+,_m|Many
+_s|spirit
+,_s|Spirit
+_w|world
+,_w|World
+_!|their
+,_!|There
+;e|ence
+;n|tion
+;s|ness
+;t|ment
+;y|ity
+

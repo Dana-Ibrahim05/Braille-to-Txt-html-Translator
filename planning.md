@@ -16,9 +16,11 @@ After our meeting on 08/14/2025, we discussed the following plan to translate ou
 1. write a file that includes all the translation rules. This file will include all the braille fcharacter combos and, delimited by the |or ~ character, followed by their translation.
 example:
 \ | ou
-1. Load the rules file and copy all its elements into a map of "pairs". suggestion:a map of strings, but iterating over a map can be difficult.
-2. Create a translator object (using classes), The translator object will load the input file and keep track of the input file's changes
-3. Test using a test file. Note: use toupper (letter) if needed (i.e. because vS Code displays brf files as upper case)
+This file has been created. It will continue to be revised while testing occurs and we find any missing rules.
+
+2. Load the rules file and copy all its elements into a map of "pairs". suggestion:a map of strings, but iterating over a map can be difficult.
+3. Create a translator object (using classes), The translator object will load the input file and keep track of the input file's changes
+4. Test using a test file. Note: use toupper (letter) if needed (i.e. because vS Code displays brf files as upper case)
 
 
 
@@ -27,3 +29,4 @@ This step is similar to the previous, except that some of the symbols in contrac
 
 ## Step 3: Formatting
 It would be very helpful to have a converted file that has some element of formatting, particularly headings. Headings assist in navigation and significantly speed it up. These can be used to mark slide numbers, as well as section titltes.
+0t

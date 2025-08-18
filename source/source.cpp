@@ -4,7 +4,44 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include<map>
 using namespace std;
+// function definition for splitting a string into 2 parts based on a delimiter: the | in the "Rules.txt" file. It adds the first part as the key and the second part as the valuein a map
+void splitString(string line, map<string, string> rules){
+//create a char variable that holds the | delimiter
+char delim='|';
+//iterate over the string  until delimiter is found.
+//create 2 strings: one for the key and one for the value
+string key, value;
+//initialize a counter variable to keep track of the iteration
+int counter=0;
+while(line[counter]!=delim){
+// if the character at line[counter]is a delimiter, then the key the contains all the letters before the delimiter and the value contains all the characters after it.
+if(line[counter]==delim){
+key=line.substr(0, counter-1);
+value= line.substr(counter+1, line.size()-1);
+}
+    counter++;
+}
+// add values to the map
+rules[key]= value;
+}
+// function to load translation rules, take in rules file and add each rule to a map of strings
+void loadRules(fstream rules){
+    // open the rules file
+    rules.open("Rules.txt");
+// create a map with keys and values being both strings, the keys being the ascii interpretation of the braille characters
+map <string, string> rules;
+// create a string to hold each  word in the rules files before the delimiter
+string line;
+while(getline(rules, line)){
+    // line= getline(rules, line, '|');
+// I don't know why the line above gives me a conversion error;
+// We will implement the "splitStrings" functions here.
+
+}
+}
+
 // int checkOpenStatus(fstream file){
 // if(!file.is_open()){
 //     cout<<"Failed to open file."<<endl;
