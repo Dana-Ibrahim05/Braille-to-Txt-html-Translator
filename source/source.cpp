@@ -7,7 +7,7 @@
 #include<map>
 using namespace std;
 // function definition for splitting a string into 2 parts based on a delimiter: the | in the "Rules.txt" file. It adds the first part as the key and the second part as the valuein a map
-void splitString(string line, map<string, string> rules){
+void splitString(string &line, map<string, string> &rules){
 //create a char variable that holds the | delimiter
 char delim='|';
 //iterate over the string  until delimiter is found.
@@ -31,14 +31,13 @@ void loadRules(fstream rules){
     // open the rules file
     rules.open("Rules.txt");
 // create a map with keys and values being both strings, the keys being the ascii interpretation of the braille characters
-map <string, string> rules;
+map <string, string> rulesList;
 // create a string to hold each  word in the rules files before the delimiter
 string line;
 while(getline(rules, line)){
     // line= getline(rules, line, '|');
 // I don't know why the line above gives me a conversion error;
-// We will implement the "splitStrings" functions here.
-
+splitString(line, rulesList);
 }
 }
 
@@ -52,6 +51,9 @@ while(getline(rules, line)){
 // }
 int main()
 {
+fstream rulesFile;
+loadRules(rulesFile); // load the rules from the rules file
+
     // create an fstream object to open the braille file
     fstream brailleFile;
     // open the braille file
