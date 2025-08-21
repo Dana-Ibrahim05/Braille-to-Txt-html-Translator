@@ -1,4 +1,4 @@
-/*This file contains the attributes and methods of the Translator class.
+    /*This file contains the attributes and methods of the Translator class.
 The translator is used  to load input and output files.*/
 #include <iostream>
 #include <fstream>
