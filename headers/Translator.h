@@ -1,8 +1,9 @@
-    /*This file contains the attributes and methods of the Translator class.
+/*This file contains the attributes and methods of the Translator class.
 The translator is used  to load input and output files.*/
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "RuleTree.h"
 using namespace std;
 
 // create inclusion guard
@@ -12,57 +13,64 @@ using namespace std;
 class Translator
 {
     // atributes: Take in a file for input and a file for output.
-private:
-    //Scott Comment: I would not use pointers here. You want 
-    // input and output files
-    fstream *input;
-    fstream *output;
-
+    private:
     // File objects for input and output
-    fstream inputFile; //BRF file
-    fstream outputFile; //Formatted HTML / MD file
-    fstream ruleFile;
+    fstream inputFile;  // BRF file
+    fstream outputFile; // Formatted HTML / MD file
+    fstream ruleFile; //File that holds all of the rules
 
-public:
-    // default constructor
-    Translator()
+    RuleTree rTree; // Rule tree that is populated from ruleFile
+
+    public:
+    // Scott version of a constructor using delegated constructors
+    Translator(string inputFileName, string outputFileName, string ruleFileName) :
+        inputFile(inputFileName, std::fstream::in | std::fstream::binary),
+        outputFile(outputFileName, std::fstream::out | std::fstream::binary),
+        ruleFile(ruleFileName, std::fstream::in | std::fstream::binary),
+        rTree(ruleFile)
     {
-        *input = nullptr;
-        *output = nullptr;
-    }
-    Translator(fstream *inputFile, fstream *outputFile)
-    {
-        input = inputFile;
-        output = outputFile;
+        //Verify everything opened
+        if(! (inputFile.is_open() && !inputFile.fail()) ){
+            cout << "Something went wrong with input file! |" << inputFileName << "|" << endl;
+        }
+        if(! (outputFile.is_open() && !outputFile.fail()) ){
+            cout << "Something went wrong with output file! |" << outputFileName << "|" << endl;
+        }
+
+        // Other constructor-y things
+        cout << "Done setting up the translator!" << endl << endl;
     }
 
-    //Scott version of a constructor using delegated constructors
-    Translator(string inputFileName, string outputFileName, string ruleFileName): inputFile(inputFileName, std::fstream::in | std::fstream::binary), outputFile(outputFileName, std::fstream::out | std::fstream::binary), ruleFile(ruleFileName, std::fstream::out | std::fstream::binary){
-        //Other constructor-y things
-    } 
+    // Main translation method
+    // Input: line - current working space, the first character is the 'next to be translated' character
+    //               the character may or may not be the first in a longer chain of characters that influence the translation
+    //        lineConsume - the number of characters that were used from line to form the translation.
+    // Output: a string that will need to be appended to the growing translation, i.e. what the input character(s) get translated to
+    //        example: if line is |,LOS ,ANGELES :ILE %E 0 9 HI<|
+    //                 the pattern match will be |,L|
+    //                 lineConsume will be 2, for the two characters used
+    //                 return value will be |L| (capital L)
+    //        Alt example: if the line is | X ) BLACK4 ,I WI% 6GEE-|
+    //                 the pattern match will be | X |
+    //                 lineConsume will be 3, for the three character used (TODO: this may be wrong, it may need to be 2 and keep the last space for the next translation)
+    //                 return value will be | it |
+    string translate(string& line, int& lineConsume){
+        string matched;
+        string translated;
 
-    // function to open both input and output files
-    void openFiles(string inputFileName, string outputFileName, fstream *inputFile, fstream *outputFile)
-    {
-        outputFile->open(outputFileName);
-        inputFile->open(outputFileName);
-    }
-    // Function to copy contents of input file to output file, takes input and output files as parameters
-    void copyInputToOutput(fstream *input, fstream *output)
-    {
-        string str;
-        while (*input >> str)
-        {
-            *input >> str;  // read each word from the input file.
-            *output << str; // copy contents from braille file to text file
-            // cout<<str;
+        //Perform the look up
+        rTree.lookUp(line,matched,translated);
+
+        if(matched != ""){
+            lineConsume = matched.length();
+            return translated;
+        } else {
+            cout << "ERORR IN TRANSLATE!" << endl;
+            lineConsume = -1;
+            return "";
         }
     }
-    // close input and output files.
-    void closeFiles(fstream *input, fstream*output){
-        input->close();// closes input file
-        output->close();// closes output file.
-    }
+
 };
 
 // end inclusion guard

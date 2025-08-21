@@ -14,7 +14,6 @@ a|a
 ,Ab |About 
  abv | above 
 ,abv | Above 
-
  ac | according 
  acr |accross 
  af | after 
@@ -261,4 +260,3 @@ _!|their
 ;s|ness
 ;t|ment
 ;y|ity
-

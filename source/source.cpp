@@ -61,12 +61,42 @@ void loadRules(fstream &rules)
 // }
 int main()
 {
-    fstream rulesFile;
-    loadRules(rulesFile); // load the rules from the rules file
+    cout << "Creating translator!" << endl;
+    Translator trans("./ASCII Braille.brf","./scott_output.txt","./rules.txt"); //Create the translator
+    //                ^ Input File           ^ Output file         ^ Rule File
+
+    string testLine = "miss$ a trick4 ,!n %e _h a new 9spir,n3";
+    int consumeNum = 0;
+    string translation = "";
+    string outLine = "";
+
+    while(testLine.length() != 0){
+
+        translation = trans.translate(testLine,consumeNum);
+
+        cout << "Test Line: |" << testLine << "|" << endl;
+        cout << "Consume num: " << consumeNum << endl;
+        cout << "Translation: |" << translation << "|" << endl;
+
+        if(translation != "<EMPTY TRANSLATION ERROR>" && consumeNum > 0){
+            outLine += translation;
+            testLine = testLine.substr(consumeNum);
+        } else {
+            outLine += testLine[0]; //Pass through
+            testLine = testLine.substr(1); //Remove first element
+        }
+    }
+
+    cout << "Output Line: |" << outLine << "|" << endl;
+
+    //RuleTree tree("../rules.txt")
+
+    //fstream rulesFile;
+    //loadRules(rulesFile); // load the rules from the rules file
     // initialize a translator object
-    fstream *brailleFile, *textFile;
-    Translator initial(brailleFile, textFile);
-    initial.openFiles("ASCII Braille.brf", "translated Content.txt", brailleFile, textFile);
-    initial.copyInputToOutput(brailleFile, textFile);
+//    fstream *brailleFile, *textFile;
+//    Translator initial(brailleFile, textFile);
+//    initial.openFiles("ASCII Braille.brf", "translated Content.txt", brailleFile, textFile);
+//    initial.copyInputToOutput(brailleFile, textFile);
     return 0;
 }
