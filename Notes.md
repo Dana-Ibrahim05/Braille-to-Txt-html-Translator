@@ -5,7 +5,7 @@ This is because fstream is an interface that allows us to interact with files ou
 
 2. It seems that using pointers makes working with any functions that have fstream parameters a lot easier. Is this the case?
 
-## Qiuestions
+## Questions
 1. Should I have a distructor?
 
 Yes, A distructor is important to avoid any potential errors such as the locking of files by the operating system.
@@ -14,7 +14,13 @@ Yes, A distructor is important to avoid any potential errors such as the locking
 //New map structure:
 map<string,vector<string>> ruleList;
 // The key is the first character in the translation
+//key= line[0];
 // The vector is a list of translations that start with that character
+In order to obtain that vector, we will create a function that takes in the rules file and searches each line after the '|' delimiter
+void findMatches(fstream&rules, vector<string>&matches, char delim, char key)
+while (file-getline)
+if(line[locationofdelim+1])
+vector.push_back(the_substr);
 
 Assumptions:
 * Rule dictionary is already loaded
@@ -42,4 +48,8 @@ pseudo code (assuming map to list rule set):
 - You could use interators here to make things more general (i.e. it = curTrans.begin(); it++; it.length();)
 
 
+
+
+More questions:
+1. For my copyInputToOutput function, do I need to take in the parameter of the file name or should it be the fstream object?
 

@@ -26,7 +26,7 @@ This file has been created. It will continue to be revised while testing occurs 
 Today, we discussed various important aspects about the translator object.
 1. Translator Class Architecture:
 * Using fstream objects instead of pointers.
-* Using deligate 
+* Using deligate constructors.
     Translator(string inputFileName, string outputFileName): inputFile(inputFileName, 
     * We discussed the importance of opening fstream objects in both binary and input (using the bitwise | operator)
     * The Rules object should be part of the translator and thus, the function should be moved from main to the class header file.
@@ -40,7 +40,7 @@ Today, we discussed various important aspects about the translator object.
     I chose to do option b because it was clearer to me.
     3. Miscellaneous:
     * in the "splitString" function, we discussed using the "find" method to find the delimiter instead of having an extra layer to the algorithm (the while-loop).
-    * We also discussed that when using "substr" and not include a second parameter, the system automatically splits the string to the end of the string.
+    * We also discussed that when using "substr" and not include a second parameter, the system automatically splits the string to the end of the string and how this could be causing an "out-of-range" error.
     
 
 ## Step 2 (B): Translating math formulas
