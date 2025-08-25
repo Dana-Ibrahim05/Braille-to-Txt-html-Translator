@@ -51,5 +51,6 @@ pseudo code (assuming map to list rule set):
 
 
 More questions:
-1. For my copyInputToOutput function, do I need to take in the parameter of the file name or should it be the fstream object?
-
+1. Can we talk about the architecture of the Translator methods?
+example: For my copyInputToOutput function, do I need to take in the parameter of the file name or should it be the fstream object?
+Should I perhaps use a getter function to retrieve the private variables for the fstream objects?

@@ -21,5 +21,7 @@ using namespace std;
 int main()
 {
     // initialize a translator object
+    Translator initial("22672v01.brf", "translated Content.txt", "rules.txt");
+    
     return 0;
 }

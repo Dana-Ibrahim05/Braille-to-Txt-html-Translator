@@ -76,7 +76,7 @@ void loadRules(fstream &rules)
     map<char, vector<string>> rulesList;
     // create a string to hold each  word in the rules file
     string line;
-    while (getline(rules, line))char 
+    while (getline(rules, line))
     {
         // line= getline(rules, line, '|');
         // I don't know why the line above gives me a conversion error;
@@ -99,7 +99,7 @@ vector<string> curTrans= rulesList[line[0]];
 //int lineConsumed=0;
 string output;
 for(int i=0; i<curTrans.size(); i++){
-if(line.find(curTrans[i], 0, curTrans(i).length()))
+if(line.find(curTrans[i], 0))
 output=curTrans[i];
 
 }
