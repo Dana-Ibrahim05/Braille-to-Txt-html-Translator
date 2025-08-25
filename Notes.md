@@ -57,6 +57,11 @@ Should I perhaps use a getter function to retrieve the private variables for the
 
 
 August 25, 2025
-1. Problem with "loadRules", the file is passed in by referenece, sso the file is exhausted due to the passout to mult. functs. Use pointer to figure out
-2. Importance oof having the "SplitString" function because it will be used in translation.
+1. Problem with "loadRules", the file is passed in by reference, so the file is exhausted due to the passing of the file to mult. functs. Use file pointer to get back to the next line to avoid the rules dictionary not being completely loaded.
+2. Importance of having the "SplitString" function because it will be used in translation.
+3. We discussed the restructuring of the map that holds the rules dictionary: a key of type "char" and a vector of pairs (can be included through the stl or created manually using classes) The rules will be added to the vector line-by-line, so we will modify the "findMatches" structure.
+After the string is split, each pair in the vector will contain the full pattern, followed by its corresponding translation.
+For the translation method to work, it will go through the first letter, search by key, then display the next character, searches that vector, and so on.
+
+
 
