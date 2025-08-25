@@ -28,7 +28,8 @@ public:
         // Other constructor-y things
     }
 // function to organize the rules dictionary by finding substrings that start with a specific character and adding them to a vector of strings.
-    void findMatches(fstream &rules, vector<string> &matches, char delim, char key)
+
+void findMatches(fstream &rules, vector<string> &matches, char delim, char key)
     {
         string line;
         while (getline(rules, line))

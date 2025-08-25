@@ -43,6 +43,7 @@ Today, we discussed various important aspects about the translator object.
     * We also discussed that when using "substr" and not include a second parameter, the system automatically splits the string to the end of the string and how this could be causing an "out-of-range" error.
     
 
+sideNote
 ## Step 2 (B): Translating math formulas
 This step is similar to the previous, except that some of the symbols in contractions and the symbols in math overlap, and therefore we must create another set of rules to allow this translation to occur without causing any mistranslation of math content into text and vice versa.
 

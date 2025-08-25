@@ -54,3 +54,9 @@ More questions:
 1. Can we talk about the architecture of the Translator methods?
 example: For my copyInputToOutput function, do I need to take in the parameter of the file name or should it be the fstream object?
 Should I perhaps use a getter function to retrieve the private variables for the fstream objects?
+
+
+August 25, 2025
+1. Problem with "loadRules", the file is passed in by referenece, sso the file is exhausted due to the passout to mult. functs. Use pointer to figure out
+2. Importance oof having the "SplitString" function because it will be used in translation.
+
